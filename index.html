@@ -79,16 +79,16 @@
 
 
 
-<meta name="description" content="RNG!!!">
+<meta name="description" content="sirnple&apos;s blogs">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
 <meta property="og:url" content="http://yoursite.com/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="RNG!!!">
+<meta property="og:description" content="sirnple&apos;s blogs">
 <meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="RNG!!!">
+<meta name="twitter:description" content="sirnple&apos;s blogs">
 
 
 
@@ -292,6 +292,530 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/12/Java-I-O/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="sirnple">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/04/12/Java-I-O/" itemprop="url">Java I/O</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-12T19:22:37+08:00">
+                2020-04-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Java-I-O"><a href="#Java-I-O" class="headerlink" title="Java I/O"></a>Java I/O</h1>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/12/eclipse-jdt-AST/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="sirnple">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/04/12/eclipse-jdt-AST/" itemprop="url">eclipse jdt AST</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-12T19:22:02+08:00">
+                2020-04-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="eclipse-jdt-AST"><a href="#eclipse-jdt-AST" class="headerlink" title="eclipse jdt AST"></a>eclipse jdt AST</h1><p>个人理解：将程序解析成一棵由不同种类的节点构成的树，每个节点代表不同的构成部分（比如：Declaration，Statement，Assignment）</p>
+<h2 id="eclipse-jdt"><a href="#eclipse-jdt" class="headerlink" title="eclipse jdt"></a>eclipse jdt</h2><h3 id="AST的创建"><a href="#AST的创建" class="headerlink" title="AST的创建"></a>AST的创建</h3><p>有两种方法创建AST</p>
+<ul>
+<li><p>方法一：解析source code</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ASTParser.</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>方法二：直接创建ASTNode来组合</p>
+</li>
+</ul>
+<h3 id="AST的构成"><a href="#AST的构成" class="headerlink" title="AST的构成"></a>AST的构成</h3><ul>
+<li><p>expressions</p>
+</li>
+<li><p>names</p>
+</li>
+<li><p>statements</p>
+</li>
+<li><p>types</p>
+</li>
+<li><p>type bode declarations</p>
+</li>
+</ul>
+<h3 id="AST的操作"><a href="#AST的操作" class="headerlink" title="AST的操作"></a>AST的操作</h3>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/12/抛开IDE，重新学习javac/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="sirnple">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/04/12/抛开IDE，重新学习javac/" itemprop="url">抛开IDE，重新学习javac</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-12T19:19:06+08:00">
+                2020-04-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="抛开IDE，重新学习javac"><a href="#抛开IDE，重新学习javac" class="headerlink" title="抛开IDE，重新学习javac"></a>抛开IDE，重新学习javac</h1><h2 id="写这篇博客的原因"><a href="#写这篇博客的原因" class="headerlink" title="写这篇博客的原因"></a>写这篇博客的原因</h2><p>在我之前的开发中，编写程序后，通过IDEA的maven插件就打包成jar，但是经常在运行jar时，报出<strong><em>找不到主类</em></strong>的错误，所以就此想爆开IDE，来看看原生的javac的使用，看看能否解决这个问题</p>
+<h2 id="前置概念"><a href="#前置概念" class="headerlink" title="前置概念"></a>前置概念</h2><p>在说javac之前，我们先来复习一下三个概念，<em>classpath</em>和<em>jar包</em>和<em>package</em>  </p>
+<ol>
+<li>classpath<br> jvm在运行程序时，会去classpath下寻找需要加载的类（除了系统类，系统类的加载不通过classpath），如果你运行程序时，需要将用到的jar包或者类添加到classpath下  </li>
+<li>jar包<br> jar包本质就是一个zip包，将多个类合成一个文件，便于传输和使用  </li>
+<li>package<br> 包是java组织类的一种机制，一个类的唯一标识就是它的全类名（QualifiedName），即包名.类名</li>
+</ol>
+<h2 id="javac是如何运行的"><a href="#javac是如何运行的" class="headerlink" title="javac是如何运行的"></a>javac是如何运行的</h2><p>现在我抛去IDEA的Java项目的结构，直接在任意一个文件夹下写了一个类<code>MainApp.java</code>（运行时打印出hello world）</p>
+<p>位于则通过</p>
+<blockquote>
+<p>javac MainApp.java</p>
+</blockquote>
+<p>就可以编译出<code>MainApp.class</code>，此时<code>MainApp.java</code>文件和<code>MainApp.class</code>文件在同一个目录下，执行</p>
+<blockquote>
+<p>java MainApp</p>
+</blockquote>
+<p>就可以打印出hello world  </p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/19/hive数据迁移到hbase探索/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="sirnple">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/19/hive数据迁移到hbase探索/" itemprop="url">hive数据迁移到hbase探索</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-19T16:30:10+08:00">
+                2019-04-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Hive-to-Hbase数据迁移"><a href="#Hive-to-Hbase数据迁移" class="headerlink" title="Hive to Hbase数据迁移"></a><strong>Hive to Hbase数据迁移</strong></h1><h2 id="1-背景"><a href="#1-背景" class="headerlink" title="1. 背景"></a>1. 背景</h2><p>数据同步平台需要从集群的hive上导出表到hbase，可能的思路有：</p>
+<ol>
+<li>使用sqoop先将hive表导出到mysql，然后从mysql导入hbase</li>
+<li>使用datax，直接从hive导出到hbase</li>
+<li>直接建一张hive到hbase的映射表，再将hive数据插到映射表中</li>
+</ol>
+<p>此次使用第三个方案</p>
+<h2 id="2-解决方案"><a href="#2-解决方案" class="headerlink" title="2. 解决方案"></a>2. 解决方案</h2><h3 id="1-步骤1"><a href="#1-步骤1" class="headerlink" title="1. 步骤1"></a>1. 步骤1</h3><blockquote>
+<p><a href="https://cwiki.apache.org/confluence/display/Hive/HBaseIntegration#HBaseIntegration-Introduction" target="_blank" rel="noopener">参考1</a><br><a href="https://docs.hortonworks.com/HDPDocuments/HDP3/HDP-3.1.0/hbase-data-access/content/hdag_hbase_hive_integration_example.html" target="_blank" rel="noopener">参考2</a><br><a href="http://bigdataprogrammers.com/data-migration-from-hive-to-hbase/" target="_blank" rel="noopener">参考3</a></p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/06/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -445,7 +969,7 @@
               <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="sirnple">
             
               <p class="site-author-name" itemprop="name">sirnple</p>
-              <p class="site-description motion-element" itemprop="description">RNG!!!</p>
+              <p class="site-description motion-element" itemprop="description">sirnple's blogs</p>
           </div>
 
           <nav class="site-state motion-element">
@@ -455,7 +979,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -496,7 +1020,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
