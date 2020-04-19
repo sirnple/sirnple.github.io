@@ -749,17 +749,17 @@
 <li>package<br> 包是java组织类的一种机制，一个类的唯一标识就是它的全类名（QualifiedName），即包名.类名</li>
 </ol>
 <h2 id="javac编译后的class是如何运行的"><a href="#javac编译后的class是如何运行的" class="headerlink" title="javac编译后的class是如何运行的"></a>javac编译后的class是如何运行的</h2><p>现在我抛去IDEA的Java项目的结构，直接在任意一个文件夹下写了一个类<code>MainApp.java</code>（运行时打印出hello world）</p>
-<p>首先，我在<code>${user.dir}/javac_learning</code>下新建<code>MainApp.java</code>，此处我的<code>${user.dir}=/Users/apple</code> <img src="./抛开IDE，重新学习javac/pic_1.png" alt="pic_1"></p>
+<p>首先，我在<code>${user.dir}/javac_learning</code>下新建<code>MainApp.java</code>，此处我的<code>${user.dir}=/Users/apple</code><br><img src="/2020/04/12/抛开IDE，重新学习javac/pic_1.png" alt="pic_1"></p>
 <p>内容为：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> org.sirnple.javac_learning;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainApp</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"hello world"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>此时，我们直接<code>javac MainApp.java</code>得到<code>MainApp.class</code> <img src="./抛开IDE，重新学习javac/pic_2.png" alt="pic_2"><br>若此时直接<code>java MainApp</code>想运行程序，则会找不到主类 <img src="./抛开IDE，重新学习javac/pic_3.png" alt="pic_3"><br>造成这个错误的主要原因是<code>java</code>命令启动启动程序时，是启动了一个<code>jvm</code>的，而如果你没有指定<code>-cp/-classpath</code>，则默认<code>classpath</code>就是当前目录<code>.</code>，而此时<code>MainApp</code>的QualifiedName则是<code>org.sirnple.javac_learning.MainApp</code>，<code>jvm</code>加载类文件时是找不到<code>MainApp.class</code>这个文件的，也就找不到类了<br>而如果我们把<code>MainApp.class</code>放到<code>./org/sirnple/javac_learning/</code>下，就可以正常启动程序 <img src="./抛开IDE，重新学习javac/pic_4.png" alt="pic_4">  </p>
+<p>此时，我们直接<code>javac MainApp.java</code>得到<code>MainApp.class</code><br><img src="/2020/04/12/抛开IDE，重新学习javac/pic_2.png" alt="pic_2"><br>若此时直接<code>java MainApp</code>想运行程序，则会找不到主类<br><img src="/2020/04/12/抛开IDE，重新学习javac/pic_3.png" alt="pic_3"><br>造成这个错误的主要原因是<code>java</code>命令启动启动程序时，是启动了一个<code>jvm</code>的，而如果你没有指定<code>-cp/-classpath</code>，则默认<code>classpath</code>就是当前目录<code>.</code>，而此时<code>MainApp</code>的QualifiedName则是<code>org.sirnple.javac_learning.MainApp</code>，<code>jvm</code>加载类文件时是找不到<code>MainApp.class</code>这个文件的，也就找不到类了<br>而如果我们把<code>MainApp.class</code>放到<code>./org/sirnple/javac_learning/</code>下，就可以正常启动程序<br><img src="/2020/04/12/抛开IDE，重新学习javac/pic_4.png" alt="pic_4">  </p>
 <h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>由以上的实验，我想说明的是：</p>
 <ol>
 <li>java的<strong><em>package概念很重要</em></strong>，java通过这种方式来<strong><em>管理所有的java类</em></strong>，通过package，将所有的无论谁，什么时候编写的类，统一纳入到一个命名空间下</li>
 <li>java命令在启动时，为什么是<code>java xxx</code>而不是<code>java xxx.class</code>？因为jvm在加载类的时候，是根据类的QualifiedName去在classpath下寻找类的</li>
 <li>最重要的一点是，IDEA使用maven插件，屏蔽了build的一系列操作，同时也让我对build的了解很少，也导致我对构建工具这块了解不深入，混淆了maven项目结构和java包之间的关系（其实这两者并没有关系），之后应该花时间重新学习一下maven，gradle之类的构建工具</li>
 </ol>
-<h2 id="附录-javac-help"><a href="#附录-javac-help" class="headerlink" title="附录-javac -help"></a>附录-javac -help</h2><p><img src="./抛开IDE，重新学习javac/pic_5.png" alt="pic_5"></p>
+<h2 id="附录-javac-help"><a href="#附录-javac-help" class="headerlink" title="附录-javac -help"></a>附录-javac -help</h2><p><img src="/2020/04/12/抛开IDE，重新学习javac/pic_5.png" alt="pic_5"></p>
 
           
         
